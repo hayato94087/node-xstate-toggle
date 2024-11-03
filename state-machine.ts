@@ -1,6 +1,8 @@
 import { setup } from "xstate";
 
-type ToggleEvent = { type: "toggle" };
+/* eslint-plugin-xstate-include */
+
+type ToggleEvent = { type: "TOGGLE" };
 
 export const toggleMachine = setup({
   types: {} as {
@@ -8,15 +10,15 @@ export const toggleMachine = setup({
   },
 }).createMachine({
   id: "toggle",
-  initial: "Inactive",
+  initial: "inactive",
   states: {
-    Inactive: {
+    inactive: {
       on: {
-        toggle: "Active",
+        TOGGLE: 'active',
       },
     },
-    Active: {
-      on: { toggle: "Inactive" },
+    active: {
+      on: { TOGGLE: 'inactive' },
     },
   },
 });

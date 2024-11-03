@@ -1,0 +1,31 @@
+{
+  "extends": ["eslint:recommended"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "xstate"],
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "ignorePatterns": ["dist", "*.js"],
+  "rules": {
+    "xstate/no-infinite-loop": "error",
+    "xstate/no-imperative-action": "error",
+    "xstate/no-ondone-outside-compound-state": "error",
+    "xstate/invoke-usage": "error",
+    "xstate/entry-exit-action": "error",
+    "xstate/prefer-always": "error",
+    "xstate/prefer-predictable-action-arguments": "error",
+    "xstate/no-misplaced-on-transition": "error",
+    "xstate/no-invalid-transition-props": "error",
+    "xstate/no-invalid-conditional-action": "error",
+    "xstate/no-async-guard": "error",
+    "xstate/event-names": ["warn", "macroCase"],
+    "xstate/state-names": ["warn", "camelCase"],
+    "xstate/no-auto-forward": "warn"
+  }
+}
