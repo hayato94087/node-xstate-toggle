@@ -32,21 +32,24 @@ actor.subscribe({
 
 actor.start();
 
-actor.send({ type: "TOGGLE" });
-actor.send({ type: "TOGGLE" });
-actor.send({ type: "TOGGLE" });
-actor.send({ type: "TOGGLE" });
-actor.send({ type: "TOGGLE" });
-actor.send({ type: "TOGGLE" });
-actor.send({ type: "TOGGLE" });
-actor.send({ type: "TOGGLE" });
-actor.send({ type: "TOGGLE" });
-actor.send({ type: "TOGGLE" });
-actor.send({ type: "TOGGLE" });
-actor.send({ type: "RESET" });
+// actor.send({ type: "TOGGLE" });
+// actor.send({ type: "TOGGLE" });
+// actor.send({ type: "TOGGLE" });
+// actor.send({ type: "TOGGLE" });
+// actor.send({ type: "TOGGLE" });
+// actor.send({ type: "TOGGLE" });
+// actor.send({ type: "TOGGLE" });
+// actor.send({ type: "TOGGLE" });
+// actor.send({ type: "TOGGLE" });
+// actor.send({ type: "TOGGLE" });
+// actor.send({ type: "TOGGLE" });
+// actor.send({ type: "RESET" });
 
-await new Promise((resolve) => setTimeout(resolve, 2000));
+// await new Promise((resolve) => setTimeout(resolve, 2000));
+
+// actor.send({ type: "TOGGLE" });
 
 actor.send({ type: "TOGGLE" });
+await new Promise((resolve) => setTimeout(resolve, 4000));
 
 actor.stop();

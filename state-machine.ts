@@ -66,6 +66,7 @@ export const toggleMachine = setup({
     },
     active: {
       on: { TOGGLE: "inactive" },
+      after: { 2000: 'inactive' },
     },
     resetting: {
       invoke: {
