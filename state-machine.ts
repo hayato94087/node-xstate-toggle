@@ -1,4 +1,4 @@
-import { setup } from "xstate";
+import { assign, setup } from "xstate";
 
 /* eslint-plugin-xstate-include */
 
@@ -13,6 +13,11 @@ export const toggleMachine = setup({
     context: ToggleContext;
     events: ToggleEvent;
   },
+  actions: {
+    incrementCount: assign({
+      count: ({ context }) => context.count + 1,
+    }),
+  },
 }).createMachine({
   id: "toggle",
   initial: "inactive",
@@ -22,7 +27,10 @@ export const toggleMachine = setup({
   states: {
     inactive: {
       on: {
-        TOGGLE: 'active',
+        TOGGLE: {
+          actions: 'incrementCount',
+          target: 'active',
+        },
       },
     },
     active: {

@@ -29,5 +29,6 @@ actor.start();
 
 actor.send({ type: "TOGGLE" });
 actor.send({ type: "TOGGLE" });
+actor.send({ type: "TOGGLE" });
 
 actor.stop();
