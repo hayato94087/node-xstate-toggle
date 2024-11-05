@@ -8,10 +8,15 @@ type ToggleContext = {
   count: number;
  };
 
+ type ToggleInput = {
+  initialCount?: number;
+ };
+
 export const toggleMachine = setup({
   types: {} as {
     context: ToggleContext;
     events: ToggleEvent;
+   input:ToggleInput;
   },
   actions: {
     incrementCount: assign({
@@ -21,9 +26,9 @@ export const toggleMachine = setup({
 }).createMachine({
   id: "toggle",
   initial: "inactive",
-  context: {
-    count: 0,
-  },
+  context: ({ input }) => ({
+    count: input.initialCount ?? 0,
+  }),
   states: {
     inactive: {
       on: {
