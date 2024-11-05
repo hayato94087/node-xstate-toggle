@@ -3,8 +3,8 @@ import { toggleMachine } from "./state-machine";
 
 const actor = createActor(toggleMachine, {
   input: {
-    initialCount: 10,
-    maxCount: 11,
+    initialCount: 0,
+    maxCount: 4,
   },
  });
 
@@ -34,6 +34,19 @@ actor.start();
 
 actor.send({ type: "TOGGLE" });
 actor.send({ type: "TOGGLE" });
+actor.send({ type: "TOGGLE" });
+actor.send({ type: "TOGGLE" });
+actor.send({ type: "TOGGLE" });
+actor.send({ type: "TOGGLE" });
+actor.send({ type: "TOGGLE" });
+actor.send({ type: "TOGGLE" });
+actor.send({ type: "TOGGLE" });
+actor.send({ type: "TOGGLE" });
+actor.send({ type: "TOGGLE" });
+actor.send({ type: "RESET" });
+
+await new Promise((resolve) => setTimeout(resolve, 2000));
+
 actor.send({ type: "TOGGLE" });
 
 actor.stop();
