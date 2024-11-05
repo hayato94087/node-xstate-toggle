@@ -4,9 +4,10 @@ import { toggleMachine } from "./state-machine";
 const actor = createActor(toggleMachine, {
   input: {
     initialCount: 10,
+    maxCount: 11,
   },
  });
- 
+
 actor.subscribe({
   next: (snapshot: SnapshotFrom<typeof actor>) => {
     const now = new Date();
